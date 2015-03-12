@@ -10,8 +10,8 @@ class Kibana < Formula
   skip_clean "src"
 
   def install
-    prefix.install Dir["src"]
-    prefix.install Dir["node"]
+    prefix.install "src"
+    prefix.install "node"
 
     # kibana configuration
     etc.install "config/kibana.yml"
@@ -19,9 +19,9 @@ class Kibana < Formula
     # remove windows specific files
     rm_f Dir["bin/*.bat"]
 
-    # point to the kibana configuration 
-    inreplace "bin/kibana", 
-      '"${DIR}/config/kibana.yml"', 
+    # point to the kibana configuration
+    inreplace "bin/kibana",
+      '"${DIR}/config/kibana.yml"',
       etc/"kibana.yml"
 
     # install the binary
