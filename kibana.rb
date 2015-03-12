@@ -1,5 +1,3 @@
-require "formula"
-
 class Kibana < Formula
   homepage "http://www.elasticsearch.org/overview/kibana/"
   version "4.0.1"
